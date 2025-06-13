@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- 这里说类型是HTML5文档类型，下面的语言说的是中文  -->
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- 让页面在设备上显示的尺寸，width=device-width这里是让网页自己适应不同的屏幕尺寸  -->
+    <title>密码错误</title>
+    <style>
+        * {
+            margin: 0;
+            /* 外延边距，元素与相邻元素之间的外部间距 */
+            padding: 0;
+            /*  元素与边框的距离,默认为0   */
+            box-sizing: border-box;
+            /* border-box是一个控制元素总大小的盒模型，计算时直接算总宽高，大概就是如果用的不是它，那么设置元素时，加上边框和内边距时，元素总宽度会变大
+            但是如果用了border，那写了一个元素的值，也就代表着把所有的宽度都算进去了。*/
+            font-family: 'Microsoft YaHei', sans-serif;
+            /*设置字体,前面的是微软雅黑，后面是如果没有改字体，则使用默认字体*/
+        }
+
+        body {
+            /*总布局*/
+            min-height: 100vh;
+            /* 让视角等于浏览器界面的100%*/
+            display: flex;
+            /*启用flexbox 布局,它是一种布局模型，用于控制元素的排列方式 */
+            justify-content: center;
+            /* 内容的对齐方式（横轴的）*/
+            align-items: center;
+            /*在交叉轴(竖轴方向上的，垂直方向)上的对齐方式*/
+            background: #f6f5f6;
+            background-image: linear-gradient(135deg, #3a5892 0%, #c3cfe2 100%);
+            /*linear……渐变色。deg渐变方向，*/
+            background: url(" ") no-repeat center center fixed;
+            /*url 是一个函数，制定外部各种资源的东西*/
+            /*no-那个是表示不平铺，就是图片只显示一次,两个center分别表示在水平方向和垂直方向居中，fixed 背景不会随着滚动而动
+            因为同时设置了background三个模式，所以后面的会把前面的迭代掉，最终只显示图片的，而图片是空的，所以界面是白色的*/
+            background-size: cover;
+            /* 这个的意思是让图片不会变形，在这里是填充*/
+        }
+
+        .error-container {
+            /*错误的那个大框框*/
+            background: white;
+            /*   设置它的背景色 */
+            padding: 80px ;
+            /*  调整报错的边框边距与文字的距离，上下左右都可以调，（上右下左） */
+            border-radius: 10px;
+             /*  调整边框的角度（圆角处理） */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            /*边框阴影  0，0分别是水平，垂直方向阴影，正负数 ，最后0.1是透明度  */
+            width: 400px;
+            /* 宽 */
+            max-width: 100%;
+            text-align: center;
+            
+        }
+
+        .error-icon {
+            font-size: 100px;
+            /* ×图标大小*/
+            color: #dc3545;
+            margin-bottom: 20px;
+            /* 与别人的间距*/
+        }
+
+        .error-title {
+        /*密码错误字体设置*/
+            color: #dc3545;
+            margin-bottom: 15px;
+            font-size: 30px;
+            /*字体大小*/
+        }
+        /*你输入的密码不正确的字体设置*/
+        .error-message {
+            color: #6c757d;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .back-btn {
+        /*返回登录页面美化*/
+            display: inline-block;
+            /* inline只能控制水平方向，无法控制宽高，而block会让一个元素默认使用一行   */
+            padding: 10px 20px;
+            /*内容与边框之间的空白*/
+            background-color:#dc3545;
+            color: white;
+            /*字体颜色*/
+            border: none ;
+            border-radius: 5px;
+            /*圆角*/
+            cursor: pointer;
+            /*让光标变成这个👆，设置光标的指针样式*/
+            font-size: 16px;
+            text-decoration: none;
+            /*用于去除默认的下划线，原本意思是文字不要有装饰*/
+            transition: background-color 0.9s ease;
+        } /*让鼠标放上去有动画效果，0.3是过度持续时间，ease 是过度速度曲线*/
+
+
+        .back-btn:hover /*悬停样式*/{
+            background-color: #616ea9;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">❌</div>
+        <h2 class="error-title">密码错误</h2>
+        <p class="error-message">您输入的用户名或密码不正确，请重试。</p>
+        <a href="../index.html" class="back-btn">返回登录页面</a>
+    </div>
+</body>
+</html>
